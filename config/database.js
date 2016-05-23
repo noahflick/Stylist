@@ -9,3 +9,8 @@ if (!process.env.MONGOLAB_URI) {
     process.exit(0);
   });
 }
+
+
+mongoose.connect(dbUri)
+
+module.exports = mongoose
