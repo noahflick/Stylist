@@ -14,7 +14,7 @@ router.route('/api/stylists/:id')
 
 //GET homepage
 router.get('*', function(req, res, next) {
-  res.sendFile('index.html', { root: '/'});
+  res.sendFile('index.html');
 });
 
 module.exports = router;
