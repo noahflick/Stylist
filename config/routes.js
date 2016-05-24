@@ -4,6 +4,7 @@ var router = express.Router();
 var stylistsController = require('../controllers/stylists')
 
 router.route('/api/stylists')
+  .get(stylistsController.index)
   .post(stylistsController.create)
 
 router.route('/api/stylists/:id')
@@ -13,7 +14,7 @@ router.route('/api/stylists/:id')
 
 
 //GET homepage
-router.get('*', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.sendFile('index.html');
 });
 

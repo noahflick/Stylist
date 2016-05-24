@@ -1,13 +1,19 @@
 var Stylist = require('../models/stylist')
 
 module.exports = {
+  index: index,
   show: show,
   create: create,
   update: update,
   destroy: destroy
 }
 
-
+function index(req, res, next) {
+  Stylist.find({}, function(err, stylists) {
+    if (err) next(err);
+    res.json(stylists);
+  });
+}
 
 function show(req, res, next){
   var id = req.params.id
