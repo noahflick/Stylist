@@ -37,6 +37,8 @@ function create(req, res, next) {
         message: 'Successfully created user.',
         data: {
           email: user.email,
+          username: user.username,
+          password: user.password,
           id:    user._id
         }
       });

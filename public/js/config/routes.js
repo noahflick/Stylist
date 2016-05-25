@@ -33,7 +33,7 @@ angular
       })
       .state("signin", {
         url:          "/signin",
-        templateUrl:  "/js/signin.html",
+        templateUrl:  "/js/users/user-new.html",
         controller:   "SignInController",
         controllerAs: "vm"
       })
@@ -41,6 +41,7 @@ angular
         url:         "/profile",
         templateUrl: "/js/profile.html"
       });
+
 
 
 

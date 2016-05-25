@@ -4,6 +4,7 @@ var router = express.Router();
 var usersController = require('../controllers/users')
 // var clientsController = require('../controllers/clients')
 // var apptsController = require('../controllers/appts')
+var token = require('../config/token_auth');
 
 //users
 router.route('/api/users')
@@ -14,6 +15,12 @@ router.route('/api/users/:id')
   .get(usersController.show)
   .put(usersController.update)
   .delete(usersController.destroy)
+
+router.route('/api/users/me')
+  .get(token.authenticate, usersController.me);
+
+router.route('/api/token')
+  .post(token.create);
 
 //clients
 // router.route('/api/clients')
