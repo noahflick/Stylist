@@ -1,10 +1,12 @@
 require('dotenv').load()
 var mongoose = require('./database')
 
-var Stylist = require('../models/stylist')
+var User = require('../models/user')
+// var Client = require('../models/client')
+// var Appt = require('../models/appt')
 
 
-var stylists = [
+var users = [
   {
     email: 'michellebelle@gmail.com',
     username: "michelle123",
@@ -22,15 +24,28 @@ var stylists = [
   }
 ];
 
-Stylist.remove({}, function(err) {
+User.remove({}, function(err) {
   if (err) console.log(err);
-  Stylist.create(stylists, function(err, stylists) {
+  User.create(users, function(err, users) {
     if (err) {
       console.log(err);
     } else {
-      console.log("Database seeded with " + stylists.length + " stylists.");
+      console.log("Database seeded with " + users.length + " users.");
       mongoose.connection.close();
     }
     process.exit();
   });
 });
+
+// Client.remove({}, function(err) {
+//   if (err) console.log(err);
+//   Client.create(clients, function(err, clients) {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log("Database seeded with " + clients.length + " clients.");
+//       mongoose.connection.close();
+//     }
+//     process.exit();
+//   });
+// });

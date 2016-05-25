@@ -1,6 +1,8 @@
 (function() {
+  'use strict'
 
-angular.module('stylist')
+angular
+  .module('stylist')
   .config(MainRouter);
 
   MainRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
@@ -11,12 +13,35 @@ angular.module('stylist')
         url: '/',
         templateUrl: 'home.html'
       })
-      .state('stylistList', {
-        url: '/stylists/list',
-        templateUrl: 'js/stylists/stylist-list.html',
-        controller: 'StylistsController',
-        controllerAs: 'stylistsVm'
+      .state('userList', {
+        url: '/users/list',
+        templateUrl: 'js/users/user-list.html',
+        controller: 'UsersController',
+        controllerAs: 'usersVm'
       })
+      .state('userNew', {
+        url: '/users/new',
+        templateUrl: 'js/users/user-new.html',
+        controller: 'UserNewController',
+        controllerAs: 'userNewVm'
+      })
+      .state('userShow', {
+        url: '/users/user/:id',
+        templateUrl: 'js/users/user-show.html',
+        controller: 'UserShowController',
+        controllerAs: 'userShowVm'
+      })
+      .state("signin", {
+        url:          "/signin",
+        templateUrl:  "/js/signin.html",
+        controller:   "SignInController",
+        controllerAs: "vm"
+      })
+      .state("profile", {
+        url:         "/profile",
+        templateUrl: "/js/profile.html"
+      });
+
 
 
     $urlRouterProvider.otherwise('/')
