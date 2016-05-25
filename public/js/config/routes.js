@@ -13,12 +13,12 @@ angular
         url: '/',
         templateUrl: 'home.html'
       })
-      .state('userList', {
-        url: '/users/list',
-        templateUrl: 'js/users/user-list.html',
-        controller: 'UsersController',
-        controllerAs: 'usersVm'
-      })
+      // .state('userList', {
+      //   url: '/users/list',
+      //   templateUrl: 'js/users/user-list.html',
+      //   controller: 'UsersController',
+      //   controllerAs: 'usersVm'
+      // })
       .state('userNew', {
         url: '/users/new',
         templateUrl: 'js/users/user-new.html',
@@ -40,7 +40,19 @@ angular
       .state("profile", {
         url:         "/profile",
         templateUrl: "/js/profile.html"
-      });
+      })
+      .state('stylistDash', {
+        url: "/stylists/:id/dashboard",
+        templateUrl: '/js/stylists/dashboard.html',
+        controller: 'StylistsController',
+        controllerAs: 'stylistsVm'
+      })
+      .state('apptShow', {
+        url: "stylists/:id/appt/date",
+        templateUrl: '/js/stylists/appt-show.html',
+        controller: 'ApptController',
+        controllerAs: 'ApptsVm'
+      })
 
 
 

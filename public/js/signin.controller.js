@@ -1,4 +1,4 @@
-(function() {
+ (function() {
   "use strict";
 
   angular
@@ -11,17 +11,17 @@
     var vm = this;
 
     // BINDINGS
-    vm.signUp = {
-      email:    "pj@ga.co",
-      name:     "Philip Hughes",
-      password: "12345",
-      passwordConfirmation: "12345"
-    };
+    // vm.signUp = {
+    //   email:    "pj@ga.co",
+    //   username:     "Philip Hughes",
+    //   password: "12345",
+    //   passwordConfirmation: "12345"
+    // };
     vm.submitSignUp = submitSignUp;
-    vm.logIn = {
-      email:    "pj@ga.co",
-      password: "12345"
-    };
+    // vm.logIn = {
+    //   email:    "pj@ga.co",
+    //   password: "12345"
+    // };
     vm.submitLogIn = submitLogIn;
     vm.conflict = false;
 
@@ -35,8 +35,8 @@
         .then(
           // on success
           function(decodedToken) {
-            $log.info('Logged in!', decodedToken);
-            $state.go('home');
+            $log.info('Logged in!', decodedToken._id);
+            $state.go('stylistDash', {id: decodedToken._id});
           },
           // on error
           function(err) {

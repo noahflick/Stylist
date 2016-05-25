@@ -29,7 +29,7 @@ function UserNewController(UserResource, $state) {
         UserResource.save(vm.newUser).$promise.then(function(jsonUser) {
           vm.newUser = {};
           console.log('new user created- id: ')
-          $state.go('userShow', {id: jsonUser._id});
+          $state.go('stylistDash'/*, {id: jsonUser._id}*/);
         });
       }
     }
