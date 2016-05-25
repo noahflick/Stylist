@@ -3,16 +3,16 @@ angular
 .module('stylist')
 .controller('StylistsController', StylistsController)
 
-StylistsController.$inject = ['UserResource', '$stateParams']
+StylistsController.$inject = ['UserResource', '$stateParams', 'authService']
 
-function StylistsController(UserResource, $stateParams){
-  console.log('stylistsController working: stateparams.id: ' + $stateParams.id)
+function StylistsController(UserResource, $stateParams, authService){
   var vm = this;
-  vm.user = {}
+  if (authService.isLoggedIn()) {
+    vm.user = authService.loggedInUser();
+    console.log('stylistsController working - user: ' + vm.user)
+  }
+
   vm.test = 'stylistsController working'
-  UserResource.get({id: $stateParams.id}).$promise.then(function(jsonUser) {
-          vm.user = jsonUser;
-      });
 
 }
 

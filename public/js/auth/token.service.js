@@ -10,7 +10,7 @@
   function tokenService($log, $window) {
     $log.info("token service loaded!");
 
-    const TOKEN_KEY = 'Clippers YA HEARD';
+    const TOKEN_KEY = 'getYourHairDid98789';
     var service = {
       store:    store,
       retrieve: retrieve,

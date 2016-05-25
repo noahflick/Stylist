@@ -52,8 +52,10 @@
         .then(
           // on success
           function(decodedToken) {
-            $log.info('Logged in!', decodedToken);
-            $state.go('home');
+            if (decodedToken.role == "stylist") {
+              $log.info('Logged in!', decodedToken);
+              $state.go('stylistDash');
+            }
           },
           // on error
           function(err) {

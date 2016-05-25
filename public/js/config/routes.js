@@ -31,8 +31,8 @@ angular
         controller: 'UserShowController',
         controllerAs: 'userShowVm'
       })
-      .state("signin", {
-        url:          "/signin",
+      .state("signUp", {
+        url:          "/signUp",
         templateUrl:  "/js/users/user-new.html",
         controller:   "SignInController",
         controllerAs: "vm"
@@ -42,7 +42,7 @@ angular
         templateUrl: "/js/profile.html"
       })
       .state('stylistDash', {
-        url: "/stylists/:id/dashboard",
+        url: "/stylists/dashboard",
         templateUrl: '/js/stylists/dashboard.html',
         controller: 'StylistsController',
         controllerAs: 'stylistsVm'

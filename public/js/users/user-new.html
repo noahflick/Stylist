@@ -21,6 +21,10 @@
   </form>
  -->
   <form id='new-user' ng-submit="vm.submitSignUp()">
+    <select class="selectpicker" ng-model='vm.signup.role'>
+      <option>stylist</option>
+      <option>client</option>
+    </select>
     <div class="form-group">
       <label for="email">Email address</label>
       <input type="email" class="form-control" id="userEmail" placeholder="Email" ng-model="vm.signUp.email" >
