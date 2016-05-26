@@ -5,9 +5,9 @@
     .module('stylist')
     .factory("authService", authService);
 
-  authService.$inject = ["$log", "tokenService", "$http"];
+  authService.$inject = ["$log", "tokenService", "$http", "$state"];
 
-  function authService($log, token, $http) {
+  function authService($log, token, $http, $state) {
     $log.info("auth service loaded!");
 
     var service = {
@@ -25,7 +25,11 @@
 
 
     function loggedInUser() {
-      return token.decode();
+      if (isLoggedIn()) {
+        return token.decode();
+      } else {
+        return null;
+      }
     }
 
     function logIn(data) {
@@ -55,6 +59,7 @@
 
     function logOut() {
       token.destroy();
+      $state.go('home')
     }
   }
 

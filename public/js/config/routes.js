@@ -37,6 +37,12 @@ angular
         controller:   "SignInController",
         controllerAs: "vm"
       })
+      .state("logIn", {
+        url:          "/login",
+        templateUrl:  "/js/users/user-login.html",
+        controller:   "SignInController",
+        controllerAs: "vm"
+      })
       .state("profile", {
         url:         "/profile",
         templateUrl: "/js/profile.html"

@@ -54,14 +54,17 @@
           function(decodedToken) {
             if (decodedToken.role == "stylist") {
               $log.info('Logged in!', decodedToken);
-              $state.go('stylistDash');
+              $state.go('stylistDash', {id: decodedToken._id});
+            } else {
+              $state.go('home')
+              console.log('logged in client...')
             }
           },
           // on error
           function(err) {
             $log.info('Error:', err);
           }
-        );
+        )
     }
 
     $log.info("SignInController loaded!");
