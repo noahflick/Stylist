@@ -1,2 +1,59 @@
-<h2>Dashboard template</h2>
-<h3>{{stylistsVm.user.email}}</h3>
+<h2>Dashboard</h2>
+<h3>Hi, {{stylistsVm.user.username}}!</h3>
+<h4>Upcoming Appointments:</h4>
+<div class='row'>
+  <div class='col-xs-3'>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Jun 6, 3:30 with Jill</h3>
+      </div>
+      <div class="panel-body">
+        Rainbow dye and monk bowl cut <br>
+        <strong>$250</strong>
+      </div>
+    </div>
+  </div>
+  <div class='col-xs-3'>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Jun 6, 3:30 with Jill</h3>
+      </div>
+      <div class="panel-body">
+        Rainbow dye and monk bowl cut <br>
+        <strong>$250</strong>
+      </div>
+    </div>
+  </div>
+  <div class='col-xs-3'>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Jun 6, 3:30 with Jill</h3>
+      </div>
+      <div class="panel-body">
+        Rainbow dye and monk bowl cut <br>
+        <strong>$250</strong>
+      </div>
+    </div>
+  </div>
+  <div class='col-xs-3'>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Jun 6, 3:30 with Jill</h3>
+      </div>
+      <div class="panel-body">
+        Rainbow dye and monk bowl cut <br>
+        <strong>$250</strong>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-xs-2'>
+    <a ui-sref="apptNew({ id: stylistsVm.user._id})" class='btn btn-success'>New Appt</a>
+
+    </div>
+</div>
+
+
+
+

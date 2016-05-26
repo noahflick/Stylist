@@ -4,6 +4,7 @@ angular
 .controller('UserNewController', UserNewController)
 .controller('UserShowController', UserShowController)
 
+
 UsersController.$inject = ['UserResource']
 UserNewController.$inject = ['UserResource', '$state']
 UserShowController.$inject = ['UserResource', '$stateParams', '$state']
@@ -35,8 +36,6 @@ function UserNewController(UserResource, $state) {
     }
 
 function UserShowController(UserResource, $stateParams, $state) {
-
-
 
       var vm = this;
       vm.user = {};

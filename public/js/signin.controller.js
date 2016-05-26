@@ -36,7 +36,11 @@
           // on success
           function(decodedToken) {
             $log.info('Logged in!', decodedToken._id);
-            $state.go('stylistDash', {id: decodedToken._id});
+            if(decodedToken.role == "stylist"){
+              $state.go('stylistDash', {id: decodedToken._id});
+            } else {
+              $state.go('clientDash', {id: decodedToken._id})
+            }
           },
           // on error
           function(err) {
@@ -56,8 +60,8 @@
               $log.info('Logged in!', decodedToken);
               $state.go('stylistDash', {id: decodedToken._id});
             } else {
-              $state.go('home')
-              console.log('logged in client...')
+              $state.go('clientDash', {id: decodedToken._id})
+              console.log('logged in client')
             }
           },
           // on error

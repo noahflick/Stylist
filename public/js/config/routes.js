@@ -53,11 +53,17 @@ angular
         controller: 'StylistsController',
         controllerAs: 'stylistsVm'
       })
-      .state('apptShow', {
-        url: "stylists/:id/appt/date",
-        templateUrl: '/js/stylists/appt-show.html',
-        controller: 'ApptController',
-        controllerAs: 'ApptsVm'
+      .state('clientDash', {
+        url: "/clients/dashboard",
+        templateUrl: '/js/clients/dashboard.html',
+        controller: 'ClientsController',
+        controllerAs: 'clientsVm'
+      })
+      .state('apptNew', {
+        url: "/users/:id/appts/new",
+        templateUrl: '/js/appts/appt-new.html',
+        controller: 'ApptsNewController',
+        controllerAs: 'ApptsNewVm'
       })
 
 
