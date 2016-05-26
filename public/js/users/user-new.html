@@ -22,10 +22,13 @@
  -->
   <form id='new-user' ng-submit="vm.submitSignUp()">
     <h2>I am a:</h2>
-    <select class="form-control" ng-model='vm.signUp.role'>
-      <option value='stylist' default>Stylist</option>
-      <option value='client' >Client</option>
-    </select>
+    <div class="form-group">
+      <label for="role">I am a:</label>
+      <select class="form-control" ng-model='vm.signUp.role'>
+        <option value='stylist'>Stylist</option>
+        <option value='client' >Client</option>
+      </select>
+    </div>
     <div class="form-group">
       <label for="email">Email address</label>
       <input type="email" class="form-control" id="userEmail" placeholder="Email" ng-model="vm.signUp.email" >

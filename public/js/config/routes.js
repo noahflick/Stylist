@@ -63,7 +63,7 @@ angular
         url: "/users/:id/appts/new",
         templateUrl: '/js/appts/appt-new.html',
         controller: 'ApptsNewController',
-        controllerAs: 'ApptsNewVm'
+        controllerAs: 'apptsNewVm'
       })
 
 

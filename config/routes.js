@@ -3,7 +3,7 @@ var router = express.Router();
 
 var usersController = require('../controllers/users')
 // var clientsController = require('../controllers/clients')
-// var apptsController = require('../controllers/appts')
+var apptsController = require('../controllers/appts')
 var token = require('../config/token_auth');
 
 //users
@@ -33,9 +33,9 @@ router.route('/api/token')
 //   .delete(clientsController.destroy)
 
 // //appointments
-// router.route('/api/appts')
-//   .get(apptsController.index)
-//   .post(apptsController.create)
+router.route('/api/appts')
+  // .get(apptsController.index)
+  .post(apptsController.create)
 
 // router.route('/api/appts/:id')
 //   .get(apptsController.show)

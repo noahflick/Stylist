@@ -1,11 +1,44 @@
 
-<h2>New Appointment ng-{{1+1}}</h2>
-<input type="text" name="daterange" value="01/01/2015 1:30 PM - 01/01/2015 2:00 PM" />
+<h2>New Appointment</h2>
+
+<form id='new-user' ng-submit="apptsNewVm.submitSignUp()" >
+  <p>{{1+1}}{{apptsNewVm.user.username}}</p>
+  <div class="form-group">
+    <label for="userUsername">Stylist</label>
+    <input type="text" class="form-control" id="stylist" placeholder={{apptsNewVm.user.username}} ng-model="apptsNewVm.addAppt.stylist">
+  </div>
+  <div class="form-group">
+    <label for="client">Client</label>
+    <input type="text" class="form-control" id="client" placeholder="Search Clients" ng-model="apptsNewVm.addAppt.client" >
+  </div>
+  <div class="form-group">
+    <label for="time">When</label>
+    <input type="text" class='form-control' name="daterange" value="01/01/2015 1:30 PM - 01/01/2015 2:00 PM" ng-model='apptsNewVm.addAppt.time' />
+  </div>
+  <div class="form-group">
+  <label for="services">Services</label>
+    <select class="form-control" ng-model='apptsNewVm.addAppt.services'>
+      <option value="haircutW">Haircut - Women</option>
+      <option value="haircutM">Haircut - Men</option>
+      <option value="haircutC">Haircut - Child</option>
+      <option value="colorW">Color - Women</option>
+      <option value="colorW">Color - Men</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="length">Length</label>
+    <input type="text" class="form-control" id="userPassword1" placeholder="30" ng-model="apptsNewVm.length">
+  </div>
+  <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+  <p>{{apptsNewVm.length}}</p>
+
 
 <script type="text/javascript">
 $(function() {
     $('input[name="daterange"]').daterangepicker({
         timePicker: true,
+        singleDatePicker: true,
         timePickerIncrement: 30,
         locale: {
             format: 'MM/DD/YYYY h:mm A'

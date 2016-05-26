@@ -29,6 +29,15 @@ a {
   font-family: 'Poiret One', cursive;
 }
 
+.jumbotron h3 {
+  font-family: 'Poiret One', cursive;
+}
+
+.jumbotron h4 {
+  font-family: 'Poiret One', cursive;
+}
+
 .home {
   background-image: url("http://www.hercampus.com/sites/default/files/2015/11/17/hair2.jpg")
+
 }
