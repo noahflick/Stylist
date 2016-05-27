@@ -12,6 +12,7 @@ function index(req, res, next) {
   Appt.find({}, function(err, appts) {
     if (err) next(err);
     res.json(appts);
+    console.log(appts)
   });
 }
 

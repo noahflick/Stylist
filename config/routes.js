@@ -34,7 +34,7 @@ router.route('/api/token')
 
 // //appointments
 router.route('/api/appts')
-  // .get(apptsController.index)
+  .get(apptsController.index)
   .post(apptsController.create)
 
 // router.route('/api/appts/:id')

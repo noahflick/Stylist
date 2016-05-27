@@ -1,39 +1,22 @@
-<h3>Hello {{clientsVm.authService.loggedInUser().username}}- Your Stylists</h3>
+<h3>Hello {{clientsVm.authService.loggedInUser().username}}- Your Appointments</h3>
 <div class='row'>
-  <div class='xs-col-6'>
-    <div class='xs-col-12'>
-      <div class='xs-col-6'>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Jun 6, 3:30 with Jill</h3>
-          </div>
-          <div class="panel-body">
-            Rainbow dye and monk bowl cut <br>
-            <strong>$250</strong>
-          </div>
-        </div>
+  <div ng-repeat='appt in clientsVm.appts' class='xs-col-6'>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{appt.time | date:'MM/dd hh:mm'}} with {{appt.stylist}}</h3>
       </div>
-      <div class='xs-col-6'>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Jun 6, 3:30 with Jill</h3>
-          </div>
-          <div class="panel-body">
-            Rainbow dye and monk bowl cut <br>
-            <strong>$250</strong>
-          </div>
-        </div>
+      <div class="panel-body">
+        {{appt.services}}<br>
+        <strong>$250</strong>
       </div>
-      <div class='xs-col-6'>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Jun 6, 3:30 with Jill</h3>
-          </div>
-          <div class="panel-body">
-            Rainbow dye and monk bowl cut <br>
-            <strong>$250</strong>
-          </div>
-        </div>
-      </div>
+    </div>
   </div>
 </div>
+<div class='row'>
+  <div class='col-xs-2'>
+    <a ui-sref="apptNew({ id: clientsVm.user._id})" class='btn btn-success'>New Appt</a>
+    <p>client id: {{clientsVm.user._id}} </p>
+
+    </div>
+</div>
+

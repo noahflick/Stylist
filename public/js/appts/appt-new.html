@@ -1,23 +1,23 @@
 
 <h2>New Appointment</h2>
 
-<form id='new-user' ng-submit="apptsNewVm.submitSignUp()" >
+<form id='new-user' ng-submit="apptsNewVm.addAppt()" >
   <p>{{1+1}}{{apptsNewVm.user.username}}</p>
-  <div class="form-group">
+  <div ng-if='apptsNewVm.user.role== "client"' class="form-group">
     <label for="userUsername">Stylist</label>
-    <input type="text" class="form-control" id="stylist" placeholder={{apptsNewVm.user.username}} ng-model="apptsNewVm.addAppt.stylist">
+    <input type="text" class="form-control" id="stylist" placeholder={{apptsNewVm.user.username}} ng-model="apptsNewVm.newAppt.stylist">
   </div>
-  <div class="form-group">
+  <div ng-if='apptsNewVm.user.role == "stylist"' class="form-group">
     <label for="client">Client</label>
-    <input type="text" class="form-control" id="client" placeholder="Search Clients" ng-model="apptsNewVm.addAppt.client" >
+    <input type="text" class="form-control" id="client" placeholder="Search Clients" ng-model="apptsNewVm.newAppt.client" >
   </div>
   <div class="form-group">
     <label for="time">When</label>
-    <input type="text" class='form-control' name="daterange" value="01/01/2015 1:30 PM - 01/01/2015 2:00 PM" ng-model='apptsNewVm.addAppt.time' />
+    <input type="text" class='form-control' name="daterange" value="01/01/2015 1:30 PM - 01/01/2015 2:00 PM" ng-model='apptsNewVm.newAppt.time' />
   </div>
   <div class="form-group">
   <label for="services">Services</label>
-    <select class="form-control" ng-model='apptsNewVm.addAppt.services'>
+    <select class="form-control" ng-model='apptsNewVm.newAppt.services'>
       <option value="haircutW">Haircut - Women</option>
       <option value="haircutM">Haircut - Men</option>
       <option value="haircutC">Haircut - Child</option>

@@ -7,9 +7,10 @@
   UserResource.$inject = ['$resource']
 
   function UserResource($resource){
-    return $resource('/api/users/:id',{id: '@id'})
+    return $resource(
+      '/api/users/:id',
+      {id: '@id'}, {
+        'update': {method: 'PUT'}
+      })
   }
-
-
-
 })()

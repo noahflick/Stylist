@@ -59,13 +59,16 @@ function update(req, res, next){
     if(err) next(err)
 
       user.email = req.body.email;
+      user.password = req.body.password
       user.username = req.body.username
       user.services = req.body.services
       user.appts = req.body.appts
+      user.role = req.body.role
 
       user.save(function(err, updatedUser){
         if(err)next(err)
-          res.json(updatedShow)
+          res.json(updatedUser)
+
       })
   })
 }
