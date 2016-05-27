@@ -1,9 +1,12 @@
 <h2>Dashboard</h2>
 <h3>Hi, {{stylistsVm.authService.loggedInUser().username}}!</h3>
 <h4>Upcoming Appointments:</h4>
+<div class="form-group">
+    <input type="text" class="form-control" id="client" placeholder="Search Appts by Client" ng-model="stylistsVm.search" >
+  </div>
 <div class='row'>
   <!-- Repeat Stylist's appts -->
-  <div ng-repeat='appt in stylistsVm.appts' class='col-xs-6 col-sm-4'>
+  <div ng-repeat='appt in stylistsVm.appts | filter:stylistsVm.search' class='col-xs-6 col-sm-4'>
     <div class="panel panel-primary">
       <div class="panel-heading">
         <h3 class="panel-title">{{appt.time | date:'MM/dd hh:mm'}} with {{appt.client}}</h3>

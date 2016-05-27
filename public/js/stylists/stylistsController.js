@@ -3,10 +3,11 @@ angular
 .module('stylist')
 .controller('StylistsController', StylistsController)
 
-StylistsController.$inject = ['UserResource', 'authService', 'ApptResource']
+StylistsController.$inject = ['UserResource', 'authService', 'ApptResource', 'filterFilter']
 
-  function StylistsController(UserResource, authService, ApptResource){
+  function StylistsController(UserResource, authService, ApptResource, filterFilter){
     var vm = this;
+    vm.filteredAppts = filteredAppts
     if (authService.isLoggedIn()) {
       vm.user = authService.loggedInUser();
       vm.authService = authService
@@ -21,6 +22,10 @@ StylistsController.$inject = ['UserResource', 'authService', 'ApptResource']
       })
       // vm.appts = appts;
     });
+
+        function filteredAppts() {
+      return filterFilter(vm.appts, vm.search)
+    }
 
     function destroy(apptToDelete) {
       console.log(apptToDelete._id)
