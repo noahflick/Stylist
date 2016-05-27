@@ -2,31 +2,34 @@
 <h2>New Appointment</h2>
 
 <form id='new-user' ng-submit="apptsNewVm.addAppt()" >
-  <p>{{1+1}}{{apptsNewVm.user.username}}</p>
   <div ng-if='apptsNewVm.user.role== "client"' class="form-group">
     <label for="userUsername">Stylist</label>
-    <input type="text" class="form-control" id="stylist" placeholder={{apptsNewVm.user.username}} ng-model="apptsNewVm.newAppt.stylist">
+    <input type="text" class="form-control" id="stylist" placeholder= "Required" ng-model="apptsNewVm.newAppt.stylist">
   </div>
   <div ng-if='apptsNewVm.user.role == "stylist"' class="form-group">
     <label for="client">Client</label>
-    <input type="text" class="form-control" id="client" placeholder="Search Clients" ng-model="apptsNewVm.newAppt.client" >
+    <input type="text" class="form-control" id="client" placeholder="Search coming soon!" ng-model="apptsNewVm.newAppt.client" >
   </div>
   <div class="form-group">
-    <label for="time">When</label>
+    <label for="time">Date/Time</label>
     <input type="text" class='form-control' name="daterange" value="01/01/2015 1:30 PM - 01/01/2015 2:00 PM" ng-model='apptsNewVm.newAppt.time' />
   </div>
   <div class="form-group">
   <label for="services">Services</label>
     <select class="form-control" ng-model='apptsNewVm.newAppt.services'>
-      <option value="haircutW">Haircut - Women</option>
-      <option value="haircutM">Haircut - Men</option>
-      <option value="haircutC">Haircut - Child</option>
-      <option value="colorW">Color - Women</option>
-      <option value="colorW">Color - Men</option>
+      <option value="haircut | Long | $50">Haircut - Long</option>
+      <option value="haircut | Medium | $45">Haircut - Medium</option>
+      <option value="haircut | Short | $40">Haircut - Short</option>
+      <option value="Perm | $100">Perm</option>
+      <option value="Men's Haircut | $5">Haircut - Men</option>
+      <option value="Haircut | Child | $15">Haircut - Child</option>
+      <option value="Color | Basic | $80">Color - Basic</option>
+      <option value="Color | Multi | $125">Color - Multi</option>
+      <option value="Color | #rainbowhairdontcare | $200">Color - Deluxe</option>
     </select>
   </div>
   <div class="form-group">
-    <label for="length">Length</label>
+    <label for="length">Duration(Minutes)</label>
     <input type="text" class="form-control" id="userPassword1" placeholder="30" ng-model="apptsNewVm.length">
   </div>
   <button type="submit" class="btn btn-primary">Create</button>
@@ -34,15 +37,16 @@
   <p>{{apptsNewVm.length}}</p>
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $(function() {
     $('input[name="daterange"]').daterangepicker({
         timePicker: true,
         singleDatePicker: true,
         timePickerIncrement: 30,
+        minDate: '05/26/2016',
         locale: {
             format: 'MM/DD/YYYY h:mm A'
         }
     });
 });
-</script>
+</script> -->

@@ -37,10 +37,10 @@ router.route('/api/appts')
   .get(apptsController.index)
   .post(apptsController.create)
 
-// router.route('/api/appts/:id')
-//   .get(apptsController.show)
-//   .put(apptsController.update)
-//   .delete(apptsController.destroy)
+router.route('/api/appts/:id')
+  .get(apptsController.show)
+  .put(apptsController.update)
+  .delete(apptsController.destroy)
 
 // Require token authentication.
 var token = require('../config/token_auth');

@@ -1,0 +1,25 @@
+<h2>Edit your profile</h2>
+<form id='edit-user' ng-submit="vm.editUser()">
+    <div class="form-group">
+      <label for="role">I am a:</label>
+      <select class="form-control" ng-model='vm.user.role' placeholder='stylist or client?'>
+        <option value='stylist'>Stylist</option>
+        <option value='client' >Client</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="userEmail" placeholder="Email" ng-model="vm.user.email" >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="userPassword" placeholder="Password" ng-model="vm.user.password">
+    </div>
+    <div class="form-group">
+      <label for="userUsername">Username</label>
+      <input type="text" class="form-control" id="username" placeholder={{}} ng-model="vm.user.username">
+    </div>
+    <button type="submit" class="btn btn-primary">Edit</button>
+    <button ng-click='vm.destroy(vm.user)' type="button" class="btn btn-danger">Delete Account</button>
+  </form>
+

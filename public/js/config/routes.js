@@ -43,9 +43,11 @@ angular
         controller:   "SignInController",
         controllerAs: "vm"
       })
-      .state("profile", {
-        url:         "/profile",
-        templateUrl: "/js/profile.html"
+      .state("userEdit", {
+        url:         "/users/:id/edit",
+        templateUrl: "/js/users/user-edit.html",
+        controller: 'UsersController',
+        controllerAs: 'vm'
       })
       .state('stylistDash', {
         url: "/stylists/dashboard",

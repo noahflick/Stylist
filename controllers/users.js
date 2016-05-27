@@ -53,11 +53,11 @@ function create(req, res, next) {
 };
 
 function update(req, res, next){
+  console.log('userscontroller.update function')
   var id = req.params.id;
 
   User.findById(id, function(err, user){
     if(err) next(err)
-
       user.email = req.body.email;
       user.password = req.body.password
       user.username = req.body.username

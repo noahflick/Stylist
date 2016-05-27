@@ -11,6 +11,7 @@ StylistsController.$inject = ['UserResource', 'authService', 'ApptResource']
       vm.user = authService.loggedInUser();
       vm.authService = authService
       vm.appts = []
+      vm.destroy = destroy
       console.log('stylistsController working - role: ' + vm.user.role)
     }
 
@@ -22,6 +23,7 @@ StylistsController.$inject = ['UserResource', 'authService', 'ApptResource']
     });
 
     function destroy(apptToDelete) {
+      console.log(apptToDelete._id)
       ApptResource.delete({id: apptToDelete._id}).$promise.then(function (response) {
         console.log(response.message);
         vm.appts = vm.appts.filter(function(appt) {

@@ -34,10 +34,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li ng-if='nav.authService.loggedInUser().role == "client"'><a ui-sref="clientDash"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li ng-if='nav.authService.loggedInUser().role == "stylist"'><a ui-sref="stylistDash"><span class="glyphicon glyphicon-home"></span></a></li>
             <li ng-if="nav.authService.loggedInUser().role == 'stylist'"><a ui-sref="stylistDash">Dashboard <span class="glyphicon glyphicon-scissors"></span> </a></li>
 
-            <li ng-if="nav.authService.loggedInUser().role == 'client'"><a href="#nav-appts"><span class="glyphicon glyphicon-calendar"></span>Appointments</a></li>
+            <li ng-if="nav.authService.loggedInUser().role == 'client'"><a ui-sref="clientDash"><span class="glyphicon glyphicon-calendar"></span>Appointments</a></li>
             <li class="dropdown">
               <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -52,7 +53,10 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+            <li ng-if='nav.authService.isLoggedIn()'><a ui-sref='userEdit({id: nav.authService.loggedInUser()._id})'><span class="glyphicon glyphicon-user"></span> profile </a></li>
+
             <li ng-if="!nav.authService.isLoggedIn()"><a ui-sref="logIn"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
             <li ng-if="nav.authService.isLoggedIn()" ng-click='nav.authService.logOut()'><a href='#'><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
             <li ng-if='!nav.authService.isLoggedIn()'><a ui-sref="signUp">Sign Up <span class="sr-only">(current)</span></a></li>
           </ul>

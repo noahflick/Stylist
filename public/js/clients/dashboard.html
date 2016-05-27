@@ -6,8 +6,11 @@
         <h3 class="panel-title">{{appt.time | date:'MM/dd hh:mm'}} with {{appt.stylist}}</h3>
       </div>
       <div class="panel-body">
-        {{appt.services}}<br>
-        <strong>$250</strong>
+        <span ng-repeat='svc in appt.services'>{{svc}}</span><br>
+        <strong></strong>
+        <div class='col-xs-2'>
+          <a ng-click='clientsVm.destroy(appt)' class='btn btn-danger'>delete</a>
+        </div>
       </div>
     </div>
   </div>
@@ -15,7 +18,6 @@
 <div class='row'>
   <div class='col-xs-2'>
     <a ui-sref="apptNew({ id: clientsVm.user._id})" class='btn btn-success'>New Appt</a>
-    <p>client id: {{clientsVm.user._id}} </p>
 
     </div>
 </div>

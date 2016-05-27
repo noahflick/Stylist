@@ -8,6 +8,17 @@ ApptsNewController.$inject = ['UserResource', 'authService', '$stateParams', 'Ap
 
 
 function ApptsNewController(UserResource, authService, $stateParams, ApptResource, $state, $http){
+  $(function() {
+    $('input[name="daterange"]').daterangepicker({
+        timePicker: true,
+        singleDatePicker: true,
+        timePickerIncrement: 30,
+        minDate: new Date(),
+        locale: {
+            format: 'MM/DD/YYYY h:mm A'
+        }
+    });
+  });
   var vm = this;
   vm.authService = authService
   if (authService.isLoggedIn()) {
@@ -38,8 +49,15 @@ function ApptsNewController(UserResource, authService, $stateParams, ApptResourc
         }
       });
     }
-}
 
-
+    function destroy(apptToDelete) {
+      ApptResource.delete({id: apptToDelete._id}).$promise.then(function (response) {
+        console.log(response.message);
+        vm.appts = vm.appts.filter(function(appt) {
+          return appt != apptToDelete;
+        });
+      });
+    }
+  }
 
 })();

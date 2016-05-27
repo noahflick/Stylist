@@ -9,6 +9,7 @@ function ClientsController(UserResource, authService, ApptResource){
   var vm = this;
   vm.authService = authService
   vm.appts = []
+  vm.destroy = destroy
   if (authService.isLoggedIn()) {
     vm.user = authService.loggedInUser();
     console.log('clientsController working - role: ' + vm.user.role)
